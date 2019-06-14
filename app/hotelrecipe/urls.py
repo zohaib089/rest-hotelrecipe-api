@@ -1,13 +1,13 @@
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 
-from .views import TagViewSet,IngredientViewSet
+from hotelrecipe import views
 
 
 router = DefaultRouter()
 
-router.register('tag',TagViewSet)
-router.register('ingredient',IngredientViewSet)
+router.register('tag',views.TagViewSet)
+router.register('ingredients',views.IngredientViewSet)
 
 app_name = 'hotelrecipe'
 
