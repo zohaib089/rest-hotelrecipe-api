@@ -1,15 +1,15 @@
 from django.urls import path,include
 from rest_framework.routers import DefaultRouter
 
-from hotelrecipe import views
+from .views import TagViewSet
 
 
 router = DefaultRouter()
 
-router.register('tag',views.TagViewSet)
+router.register('tag',TagViewSet)
 
 app_name = 'hotelrecipe'
 
-urlpattern = [
+urlpatterns = [
     path('',include(router.urls))
 ]
