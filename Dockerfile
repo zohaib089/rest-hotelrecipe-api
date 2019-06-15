@@ -1,5 +1,5 @@
 FROM python:3.7-alpine
-MAINTAINER Zee Dev Ltd
+MAINTAINER Zee app Dev
 
 ENV PYTHONUNBUFFERED 1
 

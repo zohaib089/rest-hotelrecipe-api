@@ -6,10 +6,10 @@ from django.contrib.auth.models import AbstractBaseUser, BaseUserManager, \
 from django.conf import settings
 
 
-def recipe_img_file_path(instance,filename):
-    """"Generate file path for new recipe image"""
-    ext =filename.split('.')[-1]
-    filename=f'{uuid.uuid4()}.{ext}'
+def recipe_image_file_path(instance, filename):
+    """Generate file path for new recipe image"""
+    ext = filename.split('.')[-1]
+    filename = f'{uuid.uuid4()}.{ext}'
 
     return os.path.join('uploads/recipe/', filename)
 
@@ -79,7 +79,7 @@ class Recipe(models.Model):
     link = models.CharField(max_length=255,blank=True)
     ingredients = models.ManyToManyField('Ingredient')
     tags = models.ManyToManyField('Tag')
-    image =models.ImageField(null=True, upload_to=recipe_img_file_path)
+    image = models.ImageField(null=True, upload_to=recipe_image_file_path)
 
     def __str__(self):
         return self.title
